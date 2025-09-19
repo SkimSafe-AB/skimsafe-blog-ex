@@ -86,6 +86,8 @@ defmodule SkimsafeBloggWeb do
       import Phoenix.HTML
       # Core UI components
       import SkimsafeBloggWeb.CoreComponents
+      # Blog-specific components
+      import SkimsafeBloggWeb.BlogComponents
 
       # Common modules used in templates
       alias Phoenix.LiveView.JS

@@ -1,87 +1,349 @@
 <Layouts.flash_group flash={@flash} />
-<div class="left-[40rem] fixed inset-y-0 right-0 z-0 hidden lg:block xl:left-[50rem]">
- 
-  
-</div>
-<div class="px-4 py-10 sm:px-6 sm:py-28 lg:px-8 xl:px-28 xl:py-32">
-  <div class="mx-auto max-w-xl lg:mx-0">
-  
-    <div class="mt-10 flex justify-between items-center">
-     
-      <Layouts.theme_toggle />
-    </div>
 
-  
-    <div class="flex">
-      <div class="w-full sm:w-auto">
-        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-3">
-          <a
-            href="https://hexdocs.pm/phoenix/overview.html"
-            class="group relative rounded-box px-6 py-4 text-sm font-semibold leading-6 sm:py-6"
-          >
-            <span class="absolute inset-0 rounded-box bg-base-200 transition group-hover:bg-base-300 sm:group-hover:scale-105">
-            </span>
-            <span class="relative flex items-center gap-4 sm:flex-col">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-6 w-6">
-                <path d="m12 4 10-2v18l-10 2V4Z" fill="currentColor" fill-opacity=".15" />
-                <path
-                  d="M12 4 2 2v18l10 2m0-18v18m0-18 10-2v18l-10 2"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              Guides &amp; Docs
-            </span>
-          </a>
-          <a
-            href="https://github.com/lollitenß"
-            class="group relative rounded-box px-6 py-4 text-sm font-semibold leading-6 sm:py-6"
-          >
-            <span class="absolute inset-0 rounded-box bg-base-200 transition group-hover:bg-base-300 sm:group-hover:scale-105">
-            </span>
-            <span class="relative flex items-center gap-4 sm:flex-col">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6">
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M12 0C5.37 0 0 5.506 0 12.303c0 5.445 3.435 10.043 8.205 11.674.6.107.825-.262.825-.585 0-.292-.015-1.261-.015-2.291C6 21.67 5.22 20.346 4.98 19.654c-.135-.354-.72-1.446-1.23-1.738-.42-.23-1.02-.8-.015-.815.945-.015 1.62.892 1.845 1.261 1.08 1.86 2.805 1.338 3.495 1.015.105-.8.42-1.338.765-1.645-2.67-.308-5.46-1.37-5.46-6.075 0-1.338.465-2.446 1.23-3.307-.12-.308-.54-1.569.12-3.26 0 0 1.005-.323 3.3 1.26.96-.276 1.98-.415 3-.415s2.04.139 3 .416c2.295-1.6 3.3-1.261 3.3-1.261.66 1.691.24 2.952.12 3.26.765.861 1.23 1.953 1.23 3.307 0 4.721-2.805 5.767-5.475 6.075.435.384.81 1.122.81 2.276 0 1.645-.015 2.968-.015 3.383 0 .323.225.707.825.585a12.047 12.047 0 0 0 5.919-4.489A12.536 12.536 0 0 0 24 12.304C24 5.505 18.63 0 12 0Z"
-                />
-              </svg>
-              Lolliten
-            </span>
-          </a>
-          
-        </div>
-        <div class="mt-10 grid grid-cols-1 gap-y-4 text-sm leading-6 text-base-content/80 sm:grid-cols-2">
-          <div>
-            <a
-              href="https://elixirforum.com"
-              class="group -mx-2 -my-0.5 inline-flex items-center gap-3 rounded-lg px-2 py-0.5 hover:bg-base-200 hover:text-base-content"
-            >
-              <svg
-                viewBox="0 0 16 16"
-                aria-hidden="true"
-                class="h-4 w-4 fill-base-content/40 group-hover:fill-base-content"
-              >
-                <path d="M8 13.833c3.866 0 7-2.873 7-6.416C15 3.873 11.866 1 8 1S1 3.873 1 7.417c0 1.081.292 2.1.808 2.995.606 1.05.806 2.399.086 3.375l-.208.283c-.285.386-.01.905.465.85.852-.098 2.048-.318 3.137-.81a3.717 3.717 0 0 1 1.91-.318c.263.027.53.041.802.041Z" />
-              </svg>
-              Discuss on the Elixir Forum
-            </a>
-          </div>
-          <div>
-           
-          </div>
-          <div>
-           
-          </div>
-          <div>
-            
-          </div>
+<div class="min-h-screen bg-white dark:bg-gray-900">
+  <!-- Header Section -->
+  <div class="bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl dark:text-white">
+          SkimSafe Blog
+        </h1>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-300">
+          Exploring Elixir, Phoenix, and modern web development through practical insights and tutorials.
+        </p>
+        <div class="mt-8 flex justify-center">
+          <Layouts.theme_toggle />
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <!-- Featured Post Section -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 dark:text-white">Featured Post</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <.featured_blog_card
+          title="Building Real-Time Applications with Phoenix LiveView"
+          excerpt="Discover how Phoenix LiveView revolutionizes web development by enabling real-time, interactive applications without writing JavaScript. Learn the core concepts, best practices, and see practical examples."
+          author="Sarah Chen"
+          published_at="Dec 15, 2024"
+          read_time="12 min read"
+          tags={["Phoenix", "LiveView", "Elixir", "Real-time"]}
+          href="/posts/phoenix-liveview-guide"
+        />
+      </div>
+    </div>
+
+    <!-- Recent Posts Section -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 dark:text-white">Recent Posts</h2>
+      <.blog_grid posts={[
+        %{
+          title: "Understanding Elixir Pattern Matching",
+          excerpt: "Pattern matching is one of Elixir's most powerful features. Learn how to leverage it for cleaner, more expressive code.",
+          author: "Alex Rodriguez",
+          published_at: "Dec 12, 2024",
+          read_time: "8 min read",
+          tags: ["Elixir", "Patterns", "Functional Programming"],
+          href: "/posts/elixir-pattern-matching"
+        },
+        %{
+          title: "Optimizing Phoenix Performance",
+          excerpt: "Tips and tricks for making your Phoenix applications lightning fast, from database queries to template rendering.",
+          author: "Maria Silva",
+          published_at: "Dec 10, 2024",
+          read_time: "10 min read",
+          tags: ["Phoenix", "Performance", "Optimization"],
+          href: "/posts/phoenix-performance"
+        },
+        %{
+          title: "Testing LiveView Components",
+          excerpt: "A comprehensive guide to testing Phoenix LiveView components with practical examples and best practices.",
+          author: "David Kim",
+          published_at: "Dec 8, 2024",
+          read_time: "15 min read",
+          tags: ["Testing", "LiveView", "Phoenix"],
+          href: "/posts/testing-liveview"
+        },
+        %{
+          title: "Deploying Elixir Apps with Docker",
+          excerpt: "Step-by-step guide to containerizing and deploying your Elixir applications using Docker and modern deployment strategies.",
+          author: "Jennifer Wu",
+          published_at: "Dec 5, 2024",
+          read_time: "12 min read",
+          tags: ["Deployment", "Docker", "DevOps"],
+          href: "/posts/elixir-docker-deployment"
+        },
+        %{
+          title: "OTP GenServers Explained",
+          excerpt: "Deep dive into OTP GenServers - what they are, when to use them, and how to implement them effectively in your applications.",
+          author: "Michael Thompson",
+          published_at: "Dec 3, 2024",
+          read_time: "9 min read",
+          tags: ["OTP", "GenServer", "Architecture"],
+          href: "/posts/otp-genservers"
+        },
+        %{
+          title: "Phoenix Channels for Real-Time Features",
+          excerpt: "Learn how to implement real-time features in Phoenix using Channels, from basic concepts to advanced patterns.",
+          author: "Lisa Park",
+          published_at: "Dec 1, 2024",
+          read_time: "11 min read",
+          tags: ["Phoenix", "Channels", "WebSockets"],
+          href: "/posts/phoenix-channels"
+        }
+      ]} />
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white border border-gray-200 rounded-lg p-6 dark:bg-gray-900 dark:border-gray-700">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4 dark:text-white">Getting Started</h3>
+        <div class="space-y-3">
+          <.blog_list_item
+            title="Phoenix Installation Guide"
+            author="Tech Team"
+            published_at="Nov 28, 2024"
+            read_time="5 min read"
+            href="/posts/phoenix-installation"
+          />
+          <.blog_list_item
+            title="Elixir Basics for Beginners"
+            author="Tech Team"
+            published_at="Nov 25, 2024"
+            read_time="7 min read"
+            href="/posts/elixir-basics"
+          />
+          <.blog_list_item
+            title="Your First Phoenix App"
+            author="Tech Team"
+            published_at="Nov 22, 2024"
+            read_time="10 min read"
+            href="/posts/first-phoenix-app"
+          />
+        </div>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-6 dark:bg-gray-900 dark:border-gray-700">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4 dark:text-white">Advanced Topics</h3>
+        <div class="space-y-3">
+          <.blog_list_item
+            title="Building Distributed Systems"
+            author="Expert Team"
+            published_at="Nov 20, 2024"
+            read_time="15 min read"
+            href="/posts/distributed-systems"
+          />
+          <.blog_list_item
+            title="Custom LiveView Hooks"
+            author="Expert Team"
+            published_at="Nov 18, 2024"
+            read_time="12 min read"
+            href="/posts/custom-liveview-hooks"
+          />
+          <.blog_list_item
+            title="Ecto Advanced Queries"
+            author="Expert Team"
+            published_at="Nov 15, 2024"
+            read_time="13 min read"
+            href="/posts/ecto-advanced-queries"
+          />
+        </div>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-6 dark:bg-gray-900 dark:border-gray-700">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4 dark:text-white">Community</h3>
+        <div class="space-y-4">
+          <a
+            href="https://elixirforum.com"
+            class="flex items-center space-x-3 text-gray-600 hover:text-purple-600 transition-colors dark:text-gray-400 dark:hover:text-purple-400"
+          >
+            <.icon name="hero-chat-bubble-left-right" class="w-5 h-5" />
+            <span>Join the Discussion</span>
+          </a>
+          <a
+            href="https://github.com/phoenixframework/phoenix"
+            class="flex items-center space-x-3 text-gray-600 hover:text-purple-600 transition-colors dark:text-gray-400 dark:hover:text-purple-400"
+          >
+            <.icon name="hero-code-bracket" class="w-5 h-5" />
+            <span>Contribute to Phoenix</span>
+          </a>
+          <a
+            href="https://hexdocs.pm/phoenix"
+            class="flex items-center space-x-3 text-gray-600 hover:text-purple-600 transition-colors dark:text-gray-400 dark:hover:text-purple-400"
+          >
+            <.icon name="hero-book-open" class="w-5 h-5" />
+            <span>Read the Docs</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-900 text-white dark:bg-black">
+    <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-lg">S</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">SkimSafe</h3>
+          </div>
+          <p class="text-gray-300 leading-relaxed mb-6 max-w-md">
+            SkimSafe is a leading technology company specializing in secure web applications,
+            data protection, and modern development practices. We help businesses build robust,
+            scalable solutions using cutting-edge technologies like Elixir and Phoenix.
+          </p>
+          <div class="space-y-2">
+            <div class="flex items-center space-x-3 text-gray-300">
+              <.icon name="hero-envelope" class="w-5 h-5 text-purple-400" />
+              <span>contact@skimsafe.com</span>
+            </div>
+            <div class="flex items-center space-x-3 text-gray-300">
+              <.icon name="hero-phone" class="w-5 h-5 text-purple-400" />
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <div class="flex items-center space-x-3 text-gray-300">
+              <.icon name="hero-map-pin" class="w-5 h-5 text-purple-400" />
+              <span>San Francisco, CA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="/about" class="text-gray-300 hover:text-purple-400 transition-colors">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/services" class="text-gray-300 hover:text-purple-400 transition-colors">
+                Services
+              </a>
+            </li>
+            <li>
+              <a href="/blog" class="text-gray-300 hover:text-purple-400 transition-colors">
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="/careers" class="text-gray-300 hover:text-purple-400 transition-colors">
+                Careers
+              </a>
+            </li>
+            <li>
+              <a href="/contact" class="text-gray-300 hover:text-purple-400 transition-colors">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Technologies -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Technologies</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="/topics/elixir" class="text-gray-300 hover:text-purple-400 transition-colors">
+                Elixir
+              </a>
+            </li>
+            <li>
+              <a href="/topics/phoenix" class="text-gray-300 hover:text-purple-400 transition-colors">
+                Phoenix Framework
+              </a>
+            </li>
+            <li>
+              <a href="/topics/liveview" class="text-gray-300 hover:text-purple-400 transition-colors">
+                LiveView
+              </a>
+            </li>
+            <li>
+              <a href="/topics/security" class="text-gray-300 hover:text-purple-400 transition-colors">
+                Web Security
+              </a>
+            </li>
+            <li>
+              <a href="/topics/devops" class="text-gray-300 hover:text-purple-400 transition-colors">
+                DevOps
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-700 mt-12 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div class="flex items-center space-x-6">
+            <p class="text-gray-400 text-sm">
+              © 2024 SkimSafe. All rights reserved.
+            </p>
+            <div class="flex items-center space-x-4">
+              <a href="/privacy" class="text-gray-400 hover:text-purple-400 text-sm transition-colors">
+                Privacy Policy
+              </a>
+              <a href="/terms" class="text-gray-400 hover:text-purple-400 text-sm transition-colors">
+                Terms of Service
+              </a>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center space-x-4">
+            <a
+              href="https://github.com/skimsafe"
+              class="text-gray-400 hover:text-purple-400 transition-colors"
+              aria-label="GitHub"
+            >
+              <.icon name="hero-code-bracket" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://twitter.com/skimsafe"
+              class="text-gray-400 hover:text-purple-400 transition-colors"
+              aria-label="Twitter"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+              </svg>
+            </a>
+            <a
+              href="https://linkedin.com/company/skimsafe"
+              class="text-gray-400 hover:text-purple-400 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a
+              href="mailto:contact@skimsafe.com"
+              class="text-gray-400 hover:text-purple-400 transition-colors"
+              aria-label="Email"
+            >
+              <.icon name="hero-envelope" class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-6 text-center">
+          <p class="text-gray-500 text-xs">
+            Built with ❤️ using Phoenix LiveView and Elixir.
+            <a href="https://phoenixframework.org" class="text-purple-400 hover:text-purple-300">
+              Powered by Phoenix Framework
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
