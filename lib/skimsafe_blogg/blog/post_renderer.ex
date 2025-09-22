@@ -9,13 +9,14 @@ defmodule SkimsafeBlogg.Blog.PostRenderer do
   Converts markdown content to HTML with syntax highlighting.
   """
   def render_content(markdown_content) when is_binary(markdown_content) do
-    # Use NimblePublisher's highlighting capabilities
-    markdown_content
-    |> Earmark.as_html!(
+    # Convert markdown to HTML first
+    html = Earmark.as_html!(markdown_content,
       code_class_prefix: "language-",
       smartypants: false
     )
-    |> NimblePublisher.highlight(highlighters: [:makeup_elixir, :makeup_erlang])
+
+    # Apply syntax highlighting to code blocks
+    highlight_code_blocks(html)
   end
 
   def render_content(_), do: ""
@@ -33,5 +34,52 @@ defmodule SkimsafeBlogg.Blog.PostRenderer do
   """
   def process_posts(posts) when is_list(posts) do
     Enum.map(posts, &process_post/1)
+  end
+
+  # Private functions
+
+  defp highlight_code_blocks(html) do
+    # Use regex to find and replace code blocks with highlighted versions
+    Regex.replace(
+      ~r/<code class="([^"]+) language-([^"]+)">(.*?)<\/code>/s,
+      html,
+      fn _, _class, language, code ->
+        highlighted_code = highlight_code(code, language)
+
+        # Check if the highlighted code already has pre/code tags
+        if String.contains?(highlighted_code, "<pre class=\"highlight\">") do
+          # Extract the content from the inner pre/code tags
+          inner_content = Regex.replace(
+            ~r/<pre class="highlight"><code>(.*?)<\/code><\/pre>/s,
+            highlighted_code,
+            fn _, content -> content end
+          )
+          ~s(<code class="makeup #{language}">#{inner_content}</code>)
+        else
+          ~s(<code class="makeup #{language}">#{highlighted_code}</code>)
+        end
+      end
+    )
+  end
+
+  defp highlight_code(code, "elixir") do
+    try do
+      Makeup.highlight(code, lexer: Makeup.Lexers.ElixirLexer)
+    rescue
+      _ -> code |> Phoenix.HTML.html_escape() |> Phoenix.HTML.safe_to_string()
+    end
+  end
+
+  defp highlight_code(code, "erlang") do
+    try do
+      Makeup.highlight(code, lexer: Makeup.Lexers.ErlangLexer)
+    rescue
+      _ -> code |> Phoenix.HTML.html_escape() |> Phoenix.HTML.safe_to_string()
+    end
+  end
+
+  defp highlight_code(code, _language) do
+    # For unsupported languages, just escape HTML
+    code |> Phoenix.HTML.html_escape() |> Phoenix.HTML.safe_to_string()
   end
 end
