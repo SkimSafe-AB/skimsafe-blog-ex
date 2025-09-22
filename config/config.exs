@@ -44,7 +44,8 @@ config :spark,
 
 config :skimsafe_blogg,
   ecto_repos: [SkimsafeBlogg.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  ash_domains: [SkimsafeBlogg.Domain]
 
 # Configures the endpoint
 config :skimsafe_blogg, SkimsafeBloggWeb.Endpoint,
