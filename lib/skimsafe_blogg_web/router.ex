@@ -19,8 +19,8 @@ defmodule SkimsafeBloggWeb.Router do
 
     get "/", PageController, :home
     live "/posts/:slug", PostLive, :show
+    live "/about", AboutLive, :index
     # get "/tags/:tag", TagController, :show
-    # get "/about", PageController, :about
   end
 
   # Other scopes may use custom stacks.

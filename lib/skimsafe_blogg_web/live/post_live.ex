@@ -18,7 +18,7 @@ defmodule SkimsafeBloggWeb.PostLive do
 
   def render(assigns) do
     ~H"""
-    <div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto px-4 py-8 pt-16">
       <article class="bg-white dark:bg-gray-900">
         <!-- Header -->
         <header class="mb-8 border-b border-gray-200 dark:border-gray-700 pb-8">

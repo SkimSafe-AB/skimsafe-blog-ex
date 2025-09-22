@@ -31,6 +31,149 @@
     </script>
   </head>
   <body>
+    <!-- Persistent Header -->
+    <header class="bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <.link navigate="/" class="flex items-center space-x-3 transition-transform hover:scale-105">
+              <img
+                src={~p"/images/logo_copy.svg"}
+                alt="SkimSafe"
+                class="h-8 w-auto dark:brightness-0 dark:invert"
+              />
+            </.link>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <.link
+              navigate="/"
+              class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white font-medium transition-colors"
+            >
+              Home
+            </.link>
+            <.link
+              navigate="/about"
+              class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white font-medium transition-colors"
+            >
+              About
+            </.link>
+            <a
+              href="https://skimsafe.se"
+              class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white font-medium transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              SkimSafe.se
+            </a>
+          </nav>
+
+          <!-- Theme Toggle and Mobile Menu -->
+          <div class="flex items-center space-x-4">
+            <!-- Theme Toggle -->
+            <div class="hidden sm:block">
+              <div class="card relative flex flex-row items-center border-2 border-base-300 bg-base-300 rounded-full">
+                <div class="absolute w-1/3 h-full rounded-full border-1 border-base-200 bg-base-100 brightness-200 left-0 [[data-theme=light]_&]:left-1/3 [[data-theme=dark]_&]:left-2/3 transition-[left]" />
+
+                <button
+                  class="flex p-2 cursor-pointer w-1/3"
+                  phx-click={JS.dispatch("phx:set-theme")}
+                  data-phx-theme="system"
+                >
+                  <.icon name="hero-computer-desktop-micro" class="size-3 opacity-75 hover:opacity-100" />
+                </button>
+
+                <button
+                  class="flex p-2 cursor-pointer w-1/3"
+                  phx-click={JS.dispatch("phx:set-theme")}
+                  data-phx-theme="light"
+                >
+                  <.icon name="hero-sun-micro" class="size-3 opacity-75 hover:opacity-100" />
+                </button>
+
+                <button
+                  class="flex p-2 cursor-pointer w-1/3"
+                  phx-click={JS.dispatch("phx:set-theme")}
+                  data-phx-theme="dark"
+                >
+                  <.icon name="hero-moon-micro" class="size-3 opacity-75 hover:opacity-100" />
+                </button>
+              </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button
+              type="button"
+              class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+              phx-click={JS.toggle(to: "#mobile-menu")}
+            >
+              <.icon name="hero-bars-3" class="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700">
+          <div class="flex flex-col space-y-4 pt-4">
+            <.link
+              navigate="/"
+              class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white font-medium transition-colors"
+            >
+              Home
+            </.link>
+            <.link
+              navigate="/about"
+              class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white font-medium transition-colors"
+            >
+              About
+            </.link>
+            <a
+              href="https://skimsafe.se"
+              class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white font-medium transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              SkimSafe.se
+            </a>
+
+            <!-- Mobile Theme Toggle -->
+            <div class="sm:hidden pt-2">
+              <div class="card relative flex flex-row items-center border-2 border-base-300 bg-base-300 rounded-full w-32">
+                <div class="absolute w-1/3 h-full rounded-full border-1 border-base-200 bg-base-100 brightness-200 left-0 [[data-theme=light]_&]:left-1/3 [[data-theme=dark]_&]:left-2/3 transition-[left]" />
+
+                <button
+                  class="flex p-2 cursor-pointer w-1/3"
+                  phx-click={JS.dispatch("phx:set-theme")}
+                  data-phx-theme="system"
+                >
+                  <.icon name="hero-computer-desktop-micro" class="size-3 opacity-75 hover:opacity-100" />
+                </button>
+
+                <button
+                  class="flex p-2 cursor-pointer w-1/3"
+                  phx-click={JS.dispatch("phx:set-theme")}
+                  data-phx-theme="light"
+                >
+                  <.icon name="hero-sun-micro" class="size-3 opacity-75 hover:opacity-100" />
+                </button>
+
+                <button
+                  class="flex p-2 cursor-pointer w-1/3"
+                  phx-click={JS.dispatch("phx:set-theme")}
+                  data-phx-theme="dark"
+                >
+                  <.icon name="hero-moon-micro" class="size-3 opacity-75 hover:opacity-100" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
     {@inner_content}
   </body>
 </html>
