@@ -18,6 +18,9 @@ defmodule SkimsafeBloggWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/posts/:slug", PostLive, :show
+    # get "/tags/:tag", TagController, :show
+    # get "/about", PageController, :about
   end
 
   # Other scopes may use custom stacks.

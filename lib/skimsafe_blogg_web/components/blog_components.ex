@@ -44,13 +44,13 @@ defmodule SkimsafeBloggWeb.BlogComponents do
             </div>
           </div>
         </div>
-
-        <!-- Excerpt -->
+        
+    <!-- Excerpt -->
         <p :if={@excerpt} class="text-gray-600 leading-relaxed line-clamp-3 dark:text-gray-300">
           {@excerpt}
         </p>
-
-        <!-- Tags -->
+        
+    <!-- Tags -->
         <div :if={@tags != []} class="flex flex-wrap gap-2">
           <span
             :for={tag <- @tags}
@@ -59,11 +59,14 @@ defmodule SkimsafeBloggWeb.BlogComponents do
             {tag}
           </span>
         </div>
-
-        <!-- Read more indicator -->
+        
+    <!-- Read more indicator -->
         <div class="flex items-center text-sm font-medium text-purple-600 group-hover:text-purple-700 transition-colors dark:text-purple-400 dark:group-hover:text-purple-300">
           <span>Read more</span>
-          <.icon name="hero-arrow-right" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <.icon
+            name="hero-arrow-right"
+            class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"
+          />
         </div>
       </div>
     </article>
@@ -121,11 +124,10 @@ defmodule SkimsafeBloggWeb.BlogComponents do
       <div class="space-y-6">
         <!-- Featured badge -->
         <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-purple-600 text-white">
-          <.icon name="hero-star" class="w-3 h-3 mr-1" />
-          Featured Post
+          <.icon name="hero-star" class="w-3 h-3 mr-1" /> Featured Post
         </div>
-
-        <!-- Header with title and metadata -->
+        
+    <!-- Header with title and metadata -->
         <div class="space-y-4">
           <h2 class="text-3xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors leading-tight dark:text-white dark:group-hover:text-purple-400">
             <a href={@href} class="stretched-link">
@@ -141,13 +143,16 @@ defmodule SkimsafeBloggWeb.BlogComponents do
             <span>{@read_time}</span>
           </div>
         </div>
-
-        <!-- Excerpt -->
-        <p :if={@excerpt} class="text-gray-600 leading-relaxed text-lg line-clamp-4 dark:text-gray-300">
+        
+    <!-- Excerpt -->
+        <p
+          :if={@excerpt}
+          class="text-gray-600 leading-relaxed text-lg line-clamp-4 dark:text-gray-300"
+        >
           {@excerpt}
         </p>
-
-        <!-- Tags -->
+        
+    <!-- Tags -->
         <div :if={@tags != []} class="flex flex-wrap gap-2">
           <span
             :for={tag <- @tags}
@@ -156,11 +161,14 @@ defmodule SkimsafeBloggWeb.BlogComponents do
             {tag}
           </span>
         </div>
-
-        <!-- Read more indicator -->
+        
+    <!-- Read more indicator -->
         <div class="flex items-center text-base font-semibold text-purple-600 group-hover:text-purple-700 transition-colors dark:text-purple-400 dark:group-hover:text-purple-300">
           <span>Read full article</span>
-          <.icon name="hero-arrow-right" class="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+          <.icon
+            name="hero-arrow-right"
+            class="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
+          />
         </div>
       </div>
     </article>
@@ -200,7 +208,10 @@ defmodule SkimsafeBloggWeb.BlogComponents do
         </div>
       </div>
 
-      <.icon name="hero-arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all flex-shrink-0 ml-4 dark:text-gray-400 dark:group-hover:text-purple-400" />
+      <.icon
+        name="hero-arrow-right"
+        class="w-4 h-4 text-gray-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all flex-shrink-0 ml-4 dark:text-gray-400 dark:group-hover:text-purple-400"
+      />
     </article>
     """
   end

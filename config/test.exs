@@ -10,7 +10,6 @@ config :skimsafe_blogg, SkimsafeBlogg.Repo,
   database: "skimsafe_blogg_dev.sqlite3",
   pool_size: 5
 
-
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :skimsafe_blogg, SkimsafeBloggWeb.Endpoint,
