@@ -50,7 +50,7 @@ defmodule SkimsafeBloggWeb.AboutLive do
                     Since our founding in 2017, we have protected over 400,000 people – something we're incredibly proud of.
                   </p>
                 </div>
-                
+
     <!-- Key Services -->
                 <div class="mt-8">
                   <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
@@ -104,7 +104,7 @@ defmodule SkimsafeBloggWeb.AboutLive do
                   </div>
                 </div>
               </div>
-              
+
     <!-- Company Stats/Info -->
               <div class="space-y-6">
                 <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
@@ -119,10 +119,6 @@ defmodule SkimsafeBloggWeb.AboutLive do
                     <div class="flex justify-between items-center">
                       <span class="text-gray-600 dark:text-gray-400">Location</span>
                       <span class="font-medium text-gray-900 dark:text-white">Stockholm, Sweden</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                      <span class="text-gray-600 dark:text-gray-400">Team Size</span>
-                      <span class="font-medium text-gray-900 dark:text-white">10+ Experts</span>
                     </div>
                     <div class="flex justify-between items-center">
                       <span class="text-gray-600 dark:text-gray-400">Tech Stack</span>
@@ -143,7 +139,7 @@ defmodule SkimsafeBloggWeb.AboutLive do
               </div>
             </div>
           </section>
-          
+
     <!-- About the Blog Section -->
           <section class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 p-8">
             <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
@@ -159,24 +155,27 @@ defmodule SkimsafeBloggWeb.AboutLive do
                   </h3>
                   <div class="space-y-4 text-gray-600 dark:text-gray-300">
                     <p>
-                      Welcome to the SkimSafe Developer Blog - a collaborative space where our engineering
-                      team shares insights, tutorials, and lessons learned from building secure, scalable
-                      web applications.
+                     Hey there, and welcome to the SkimSafe Developer Blog! We're Philippe and Louise, two developers who've been deep in building secure,
+                     scalable web applications and figured we wanted to start sharing what we've learned along the way.
                     </p>
                     <p>
-                      This blog is written and maintained by two passionate developers from our team who
-                      believe in sharing knowledge and contributing to the developer community. Here, we
-                      dive deep into the technologies we use daily, explore new frameworks, and share
-                      practical solutions to real-world problems.
+                      You know how it is, you solve a tricky problem at 2 AM, or finally crack that performance bottleneck that's been bugging you,
+                      and you think "someone else has probably wrestled with this exact same thing." That's exactly why we started this blog. We wanted to create
+                      a space where we could share those hard-won insights, the tutorials we wish we'd had when we were stuck, and honestly, some of the mistakes
+                      we've made so you don't have to.
                     </p>
                     <p>
-                      Whether you're just starting your journey with Elixir and Phoenix or you're a
-                      seasoned developer looking for advanced techniques, you'll find valuable content
-                      that combines practical experience with cutting-edge technology.
+                      We're both pretty obsessed with the technologies we work with every day, especially Elixir and Phoenix, and we love geeking out over new
+                      frameworks and creative solutions to the problems that keep us up at night (in a good way, mostly).
+                    </p>
+                    <p>
+                    Whether you're just dipping your toes into Elixir for the first time or you're already deep in the Phoenix ecosystem, we're here to share
+                    what's actually worked for us in the trenches. No fluff, just real experience from real projects.
+                    Thanks for joining us on this journey, we're excited to share what we've learned and hopefully learn a thing or two from you along the way.
                     </p>
                   </div>
                 </div>
-                
+
     <!-- What You'll Find -->
                 <div>
                   <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
@@ -266,7 +265,7 @@ defmodule SkimsafeBloggWeb.AboutLive do
                   </div>
                 </div>
               </div>
-              
+
     <!-- Blog Stats -->
               <div class="space-y-6">
                 <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
@@ -347,7 +346,7 @@ defmodule SkimsafeBloggWeb.AboutLive do
               </div>
             </div>
           </section>
-          
+
     <!-- Contact Section -->
           <section class="text-center py-12">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Get In Touch</h2>
@@ -370,7 +369,7 @@ defmodule SkimsafeBloggWeb.AboutLive do
             </div>
           </section>
         </div>
-        
+
     <!-- Back to Blog -->
         <div class="text-center mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
           <.link
