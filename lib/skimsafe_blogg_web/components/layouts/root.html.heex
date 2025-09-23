@@ -37,7 +37,10 @@
         <div class="flex items-center justify-between">
           <!-- Logo -->
           <div class="flex items-center">
-            <.link navigate="/" class="flex items-center space-x-3 transition-transform hover:scale-105">
+            <.link
+              navigate="/"
+              class="flex items-center space-x-3 transition-transform hover:scale-105"
+            >
               <img
                 src={~p"/images/logo_copy.svg"}
                 alt="SkimSafe"
@@ -45,8 +48,8 @@
               />
             </.link>
           </div>
-
-          <!-- Navigation -->
+          
+<!-- Navigation -->
           <nav class="hidden md:flex items-center space-x-8">
             <.link
               navigate="/"
@@ -69,8 +72,8 @@
               SkimSafe.se
             </a>
           </nav>
-
-          <!-- Theme Toggle and Mobile Menu -->
+          
+<!-- Theme Toggle and Mobile Menu -->
           <div class="flex items-center space-x-4">
             <!-- Theme Toggle -->
             <div class="hidden sm:block">
@@ -82,7 +85,10 @@
                   phx-click={JS.dispatch("phx:set-theme")}
                   data-phx-theme="system"
                 >
-                  <.icon name="hero-computer-desktop-micro" class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors" />
+                  <.icon
+                    name="hero-computer-desktop-micro"
+                    class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
+                  />
                 </button>
 
                 <button
@@ -90,7 +96,10 @@
                   phx-click={JS.dispatch("phx:set-theme")}
                   data-phx-theme="light"
                 >
-                  <.icon name="hero-sun-micro" class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors" />
+                  <.icon
+                    name="hero-sun-micro"
+                    class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
+                  />
                 </button>
 
                 <button
@@ -98,12 +107,15 @@
                   phx-click={JS.dispatch("phx:set-theme")}
                   data-phx-theme="dark"
                 >
-                  <.icon name="hero-moon-micro" class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors" />
+                  <.icon
+                    name="hero-moon-micro"
+                    class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
+                  />
                 </button>
               </div>
             </div>
-
-            <!-- Mobile Menu Button -->
+            
+<!-- Mobile Menu Button -->
             <button
               type="button"
               class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
@@ -113,9 +125,12 @@
             </button>
           </div>
         </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700">
+        
+<!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700"
+        >
           <div class="flex flex-col space-y-4 pt-4">
             <.link
               navigate="/"
@@ -137,8 +152,8 @@
             >
               SkimSafe.se
             </a>
-
-            <!-- Mobile Theme Toggle -->
+            
+<!-- Mobile Theme Toggle -->
             <div class="sm:hidden pt-2">
               <div class="relative flex flex-row items-center border-2 border-gray-300 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 rounded-full w-32">
                 <div class="absolute w-1/3 h-full rounded-full bg-white dark:bg-gray-800 shadow left-0 [[data-theme=light]_&]:left-1/3 [[data-theme=dark]_&]:left-2/3 transition-[left]" />
@@ -148,7 +163,10 @@
                   phx-click={JS.dispatch("phx:set-theme")}
                   data-phx-theme="system"
                 >
-                  <.icon name="hero-computer-desktop-micro" class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors" />
+                  <.icon
+                    name="hero-computer-desktop-micro"
+                    class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
+                  />
                 </button>
 
                 <button
@@ -156,7 +174,10 @@
                   phx-click={JS.dispatch("phx:set-theme")}
                   data-phx-theme="light"
                 >
-                  <.icon name="hero-sun-micro" class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors" />
+                  <.icon
+                    name="hero-sun-micro"
+                    class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
+                  />
                 </button>
 
                 <button
@@ -164,7 +185,10 @@
                   phx-click={JS.dispatch("phx:set-theme")}
                   data-phx-theme="dark"
                 >
-                  <.icon name="hero-moon-micro" class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors" />
+                  <.icon
+                    name="hero-moon-micro"
+                    class="size-3 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
+                  />
                 </button>
               </div>
             </div>
@@ -172,8 +196,8 @@
         </div>
       </div>
     </header>
-
-    <!-- Main Content -->
+    
+<!-- Main Content -->
     {@inner_content}
   </body>
 </html>

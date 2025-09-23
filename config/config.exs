@@ -99,3 +99,16 @@ config :phoenix, :json_library, Jason
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
+
+# AI Services Configuration
+config :skimsafe_blogg, :ai_services,
+  openai: [
+    api_key: System.get_env("OPENAI_API_KEY"),
+    model: "gpt-3.5-turbo",
+    base_url: "https://api.openai.com/v1"
+  ],
+  claude: [
+    api_key: System.get_env("ANTHROPIC_API_KEY"),
+    model: "claude-3-haiku-20240307",
+    base_url: "https://api.anthropic.com/v1"
+  ]

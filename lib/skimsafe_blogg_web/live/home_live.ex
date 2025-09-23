@@ -68,8 +68,8 @@ defmodule SkimsafeBloggWeb.HomeLive do
     ~H"""
     <div class="min-h-screen bg-white dark:bg-gray-900">
       <Layouts.flash_group flash={@flash} />
-
-      <!-- Hero Section -->
+      
+    <!-- Hero Section -->
       <div class="bg-white dark:bg-gray-900 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center">
@@ -82,8 +82,8 @@ defmodule SkimsafeBloggWeb.HomeLive do
           </div>
         </div>
       </div>
-
-      <!-- Main Content -->
+      
+    <!-- Main Content -->
       <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <!-- Featured Post Section -->
         <div class="mb-12">
@@ -101,19 +101,19 @@ defmodule SkimsafeBloggWeb.HomeLive do
             />
           </div>
         </div>
-
-        <!-- Recent Posts Section -->
+        
+    <!-- Recent Posts Section -->
         <div class="mb-12">
           <h2 class="text-2xl font-bold text-gray-900 mb-6 dark:text-white">Recent Posts</h2>
           <.blog_grid posts={@recent_posts} />
         </div>
-
-        <!-- All Posts Section -->
+        
+    <!-- All Posts Section -->
         <div class="mb-12">
           <h2 class="text-2xl font-bold text-gray-900 mb-6 dark:text-white">All Posts</h2>
           <.blog_grid posts={@all_posts} />
-
-          <!-- Load More / Show Less Buttons -->
+          
+    <!-- Load More / Show Less Buttons -->
           <div class="text-center mt-8 space-y-4">
             <!-- Load More Button -->
             <div :if={@has_more_posts}>
@@ -130,16 +130,34 @@ defmodule SkimsafeBloggWeb.HomeLive do
               >
                 <span :if={!@loading_more}>Load More Posts</span>
                 <span :if={@loading_more} class="flex items-center">
-                  <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  <svg
+                    class="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      class="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    >
+                    </circle>
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    >
+                    </path>
                   </svg>
                   Loading...
                 </span>
               </button>
             </div>
-
-            <!-- Show Less Button -->
+            
+    <!-- Show Less Button -->
             <div :if={@page_offset > 0}>
               <button
                 phx-click="show_less"
@@ -150,14 +168,13 @@ defmodule SkimsafeBloggWeb.HomeLive do
                   "dark:focus:ring-offset-gray-900"
                 ]}
               >
-                <.icon name="hero-chevron-up" class="w-4 h-4 mr-2" />
-                Show Less
+                <.icon name="hero-chevron-up" class="w-4 h-4 mr-2" /> Show Less
               </button>
             </div>
           </div>
         </div>
-
-        <!-- Quick Links Section -->
+        
+    <!-- Quick Links Section -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="bg-white border border-gray-200 rounded-lg p-6 dark:bg-gray-900 dark:border-gray-700">
             <h3 class="text-lg font-semibold text-gray-900 mb-4 dark:text-white">Getting Started</h3>
@@ -214,8 +231,8 @@ defmodule SkimsafeBloggWeb.HomeLive do
           </div>
         </div>
       </div>
-
-      <!-- Footer Section -->
+      
+    <!-- Footer Section -->
       <footer class="bg-gray-900 text-white dark:bg-black">
         <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -233,8 +250,8 @@ defmodule SkimsafeBloggWeb.HomeLive do
                 digital fraud, identity theft, and online security threats.
               </p>
             </div>
-
-            <!-- Contact Info -->
+            
+    <!-- Contact Info -->
             <div>
               <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
               <div class="space-y-3">
@@ -252,8 +269,8 @@ defmodule SkimsafeBloggWeb.HomeLive do
                 </div>
               </div>
             </div>
-
-            <!-- Quick Links -->
+            
+    <!-- Quick Links -->
             <div>
               <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
               <ul class="space-y-3">
@@ -275,8 +292,8 @@ defmodule SkimsafeBloggWeb.HomeLive do
               </ul>
             </div>
           </div>
-
-          <!-- Footer Bottom -->
+          
+    <!-- Footer Bottom -->
           <div class="border-t border-gray-700 mt-12 pt-8">
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div class="flex items-center space-x-6">
@@ -298,8 +315,8 @@ defmodule SkimsafeBloggWeb.HomeLive do
                   </a>
                 </div>
               </div>
-
-              <!-- Social Links -->
+              
+    <!-- Social Links -->
               <div class="flex items-center space-x-4">
                 <a
                   href="https://github.com/skimsafe"
@@ -326,8 +343,8 @@ defmodule SkimsafeBloggWeb.HomeLive do
                 </a>
               </div>
             </div>
-
-            <!-- Additional Info -->
+            
+    <!-- Additional Info -->
             <div class="mt-6 text-center">
               <p class="text-gray-500 text-xs">
                 Built with ❤️ using Phoenix LiveView and Elixir.

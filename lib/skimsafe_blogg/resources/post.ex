@@ -153,6 +153,7 @@ defmodule SkimsafeBlogg.Resources.Post do
 
     calculate :published_date_string, :string do
       description "Human-readable publication date"
+
       calculation fn records, _context ->
         Enum.map(records, fn record ->
           case record.published_at do
