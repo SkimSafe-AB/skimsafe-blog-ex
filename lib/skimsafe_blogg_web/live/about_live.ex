@@ -7,7 +7,8 @@ defmodule SkimsafeBloggWeb.AboutLive do
 
   def render(assigns) do
     ~H"""
-    <div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="min-h-screen bg-white dark:bg-gray-900">
+      <div class="max-w-4xl mx-auto px-4 py-8">
       <!-- Page Header -->
       <div class="text-center mb-12 pt-8">
         <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">About Us</h1>
@@ -21,21 +22,32 @@ defmodule SkimsafeBloggWeb.AboutLive do
             <div>
               <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">About SkimSafe</h2>
               <div class="space-y-4 text-gray-600 dark:text-gray-300">
-                <p class="text-lg">
-                  SkimSafe AB is a Swedish technology company specializing in online fraud prevention
-                  and identity protection. We help individuals and businesses protect themselves against
-                  digital fraud, identity theft, and online security threats.
+                <p class="text-lg font-medium text-gray-800 dark:text-gray-200">
+                  In a perfect world, you wouldn't need us.
                 </p>
                 <p>
-                  Founded with a mission to make the internet safer for everyone, we focus on delivering
-                  cutting-edge solutions that detect, prevent, and respond to online fraud activities.
-                  Our expertise helps protect personal and financial information in an increasingly
-                  digital world.
+                  No one would hack your social media accounts, trick you out of money using your BankID,
+                  skim your payment cards during a Sunday stroll, or cyberbully your children.
                 </p>
                 <p>
-                  Our solutions span across fraud detection, identity verification, secure payment
-                  systems, and digital security consulting, making us a trusted partner for
-                  organizations looking to safeguard their customers and operations.
+                  In a perfect world, we wouldn't need to warn you when someone has gotten hold of your
+                  passwords or bank card details, or when fake SMS messages are sent from your "bank".
+                </p>
+                <p>
+                  And you wouldn't need us to help you regain control of your digital life, recover
+                  stolen money, or stop bullies from sharing harmful images of your children.
+                </p>
+                <p class="text-lg font-medium text-gray-800 dark:text-gray-200">
+                  Unfortunately, we don't live in a perfect world.
+                </p>
+                <p>
+                  But as a SkimSafe member, you can feel secure knowing you have the market's most
+                  comprehensive protection against digital fraud, and that we always have your back.
+                  With us, you get a knowledgeable security expert, a caring friend, and a lawyer –
+                  all in one service. We're here for you, around the clock.
+                </p>
+                <p class="text-lg font-semibold text-purple-700 dark:text-purple-300">
+                  Since our founding in 2017, we have protected over 400,000 people – something we're incredibly proud of.
                 </p>
               </div>
 
@@ -78,7 +90,7 @@ defmodule SkimsafeBloggWeb.AboutLive do
                 <div class="space-y-4">
                   <div class="flex justify-between items-center">
                     <span class="text-gray-600 dark:text-gray-400">Founded</span>
-                    <span class="font-medium text-gray-900 dark:text-white">2020</span>
+                    <span class="font-medium text-gray-900 dark:text-white">2017</span>
                   </div>
                   <div class="flex justify-between items-center">
                     <span class="text-gray-600 dark:text-gray-400">Location</span>
@@ -304,6 +316,7 @@ defmodule SkimsafeBloggWeb.AboutLive do
           <.icon name="hero-arrow-left" class="w-4 h-4 mr-2" />
           Back to Blog
         </.link>
+      </div>
       </div>
     </div>
     """

@@ -19,6 +19,7 @@ defmodule SkimsafeBlogg.Resources.Post do
     define :list_published, action: :published
     define :list_featured, action: :featured
     define :list_recent, action: :recent
+    define :list_all_posts, action: :all_posts
     define :get_by_slug, action: :by_slug, args: [:slug]
     define :list_by_tag, action: :by_tag, args: [:tag]
     define :update_tags, action: :update_tags, args: [:tags]
@@ -43,9 +44,9 @@ defmodule SkimsafeBlogg.Resources.Post do
     end
 
     read :featured do
-      description "Get featured posts"
+      description "Get the latest featured post"
       filter expr(featured == true and published == true)
-      pagination offset?: true, keyset?: true, default_limit: 5
+      pagination offset?: true, keyset?: true, default_limit: 1
     end
 
     read :by_slug do
@@ -65,7 +66,13 @@ defmodule SkimsafeBlogg.Resources.Post do
     read :recent do
       description "Get recent posts ordered by publication date"
       filter expr(published == true)
-      pagination offset?: true, keyset?: true, default_limit: 10
+      pagination offset?: true, keyset?: true, default_limit: 3
+    end
+
+    read :all_posts do
+      description "Get all posts with pagination for load more functionality"
+      filter expr(published == true)
+      pagination offset?: true, keyset?: true, default_limit: 6
     end
   end
 
@@ -144,10 +151,16 @@ defmodule SkimsafeBlogg.Resources.Post do
       description "Full URL path to the post"
     end
 
-    calculate :published_date_string,
-              :string,
-              expr(fragment("strftime('%b %d, %Y', ?)", published_at)) do
+    calculate :published_date_string, :string do
       description "Human-readable publication date"
+      calculation fn records, _context ->
+        Enum.map(records, fn record ->
+          case record.published_at do
+            nil -> ""
+            datetime -> Calendar.strftime(datetime, "%b %d, %Y")
+          end
+        end)
+      end
     end
 
     calculate :read_time, :string, expr(fragment("? || ' min read'", read_time_minutes)) do
