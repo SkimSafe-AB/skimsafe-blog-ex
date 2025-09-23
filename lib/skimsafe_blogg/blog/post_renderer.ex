@@ -10,10 +10,11 @@ defmodule SkimsafeBlogg.Blog.PostRenderer do
   """
   def render_content(markdown_content) when is_binary(markdown_content) do
     # Convert markdown to HTML first
-    html = Earmark.as_html!(markdown_content,
-      code_class_prefix: "language-",
-      smartypants: false
-    )
+    html =
+      Earmark.as_html!(markdown_content,
+        code_class_prefix: "language-",
+        smartypants: false
+      )
 
     # Apply syntax highlighting to code blocks
     highlight_code_blocks(html)
@@ -49,11 +50,13 @@ defmodule SkimsafeBlogg.Blog.PostRenderer do
         # Check if the highlighted code already has pre/code tags
         if String.contains?(highlighted_code, "<pre class=\"highlight\">") do
           # Extract the content from the inner pre/code tags
-          inner_content = Regex.replace(
-            ~r/<pre class="highlight"><code>(.*?)<\/code><\/pre>/s,
-            highlighted_code,
-            fn _, content -> content end
-          )
+          inner_content =
+            Regex.replace(
+              ~r/<pre class="highlight"><code>(.*?)<\/code><\/pre>/s,
+              highlighted_code,
+              fn _, content -> content end
+            )
+
           ~s(<code class="makeup #{language}">#{inner_content}</code>)
         else
           ~s(<code class="makeup #{language}">#{highlighted_code}</code>)
