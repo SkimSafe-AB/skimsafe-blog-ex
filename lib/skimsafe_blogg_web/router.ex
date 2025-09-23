@@ -17,7 +17,7 @@ defmodule SkimsafeBloggWeb.Router do
   scope "/", SkimsafeBloggWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", HomeLive, :index
     live "/posts/:slug", PostLive, :show
     live "/about", AboutLive, :index
     # get "/tags/:tag", TagController, :show

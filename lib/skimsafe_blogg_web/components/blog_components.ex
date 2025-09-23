@@ -91,7 +91,7 @@ defmodule SkimsafeBloggWeb.BlogComponents do
         title={post.title}
         excerpt={post.excerpt}
         author={post.author}
-        published_at={post.published_at}
+        published_at={post.published_date_string}
         read_time={post.read_time}
         tags={post.tags}
         href={post.href}

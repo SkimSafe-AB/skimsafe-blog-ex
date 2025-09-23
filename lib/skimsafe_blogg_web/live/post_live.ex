@@ -18,8 +18,9 @@ defmodule SkimsafeBloggWeb.PostLive do
 
   def render(assigns) do
     ~H"""
-    <div class="max-w-4xl mx-auto px-4 py-8 pt-16">
-      <article class="bg-white dark:bg-gray-900">
+    <div class="min-h-screen bg-white dark:bg-gray-900">
+      <div class="max-w-4xl mx-auto px-4 py-8 pt-16">
+        <article class="bg-white dark:bg-gray-900">
         <!-- Header -->
         <header class="mb-8 border-b border-gray-200 dark:border-gray-700 pb-8">
           <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white leading-tight">
@@ -49,7 +50,7 @@ defmodule SkimsafeBloggWeb.PostLive do
         </header>
         
     <!-- Article content with syntax highlighting -->
-        <div class="blog-content prose prose-lg max-w-none dark:prose-invert prose-pre:bg-gray-50 dark:prose-pre:bg-gray-800 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700">
+        <div class="blog-content prose prose-lg max-w-none">
           {raw(@post.rendered_content)}
         </div>
         
@@ -69,7 +70,8 @@ defmodule SkimsafeBloggWeb.PostLive do
             </div>
           </div>
         </footer>
-      </article>
+        </article>
+      </div>
     </div>
     """
   end
