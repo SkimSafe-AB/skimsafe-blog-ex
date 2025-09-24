@@ -1,0 +1,55 @@
+# Elixir build artifacts
+/_build/
+/deps/
+/doc/
+
+# Phoenix assets
+/assets/node_modules/
+
+# Test artifacts
+/cover/
+/test/support/fixtures/
+
+# Database files
+*.sqlite3
+*.sqlite3-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Git
+.git/
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Development files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Temporary files
+/tmp/
+
+# Runtime files
+/priv/static/
+/priv/repo/seeds.exs
+*.pid
+
+# Mix artifacts
+mix.lock.backup
+*.mix
