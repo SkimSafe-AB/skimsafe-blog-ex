@@ -406,3 +406,41 @@
 [data-theme="dark"] .makeup .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 [data-theme="dark"] .makeup .vm { color: #f8f8f2 } /* Name.Variable.Magic */
 [data-theme="dark"] .makeup .il { color: #ae81ff } /* Literal.Number.Integer.Long */
+
+/* Purple shimmer animation for hero text */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.hero-shimmer {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6 25%,
+    #c084fc 50%,
+    #8b5cf6 75%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Dark mode version with slightly lighter purple */
+[data-theme="dark"] .hero-shimmer {
+  background: linear-gradient(
+    90deg,
+    #a855f7 25%,
+    #d8b4fe 50%,
+    #a855f7 75%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

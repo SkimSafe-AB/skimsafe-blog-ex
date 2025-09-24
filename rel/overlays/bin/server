@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+
+cd -P -- "$(dirname -- "$0")"
+
+echo "Running database migrations..."
+./skimsafe_blogg eval SkimsafeBlogg.Release.migrate
+
+echo "Starting Phoenix server..."
+exec ./skimsafe_blogg start

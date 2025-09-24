@@ -73,7 +73,7 @@ defmodule SkimsafeBloggWeb.HomeLive do
       <div class="bg-white dark:bg-gray-900 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center">
-            <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl dark:text-white mb-6">
+            <h1 class="text-4xl font-bold sm:text-5xl lg:text-6xl mb-6 hero-shimmer">
               Developer Blog
             </h1>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-300">
@@ -275,17 +275,21 @@ defmodule SkimsafeBloggWeb.HomeLive do
               <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
               <ul class="space-y-3">
                 <li>
-                  <a href="/about" class="text-gray-300 hover:text-purple-400 transition-colors">
+                  <.link navigate="/about" class="text-gray-300 hover:text-purple-400 transition-colors">
                     About Us
-                  </a>
+                  </.link>
                 </li>
                 <li>
-                  <a href="/blog" class="text-gray-300 hover:text-purple-400 transition-colors">
+                  <.link
+                    navigate="/"
+                    class="text-gray-300 hover:text-purple-400 transition-colors"
+                    phx-click={JS.dispatch("scroll-to-top")}
+                  >
                     Blog
-                  </a>
+                  </.link>
                 </li>
                 <li>
-                  <a href="/contact" class="text-gray-300 hover:text-purple-400 transition-colors">
+                  <a href="mailto:info@skimsafe.se" class="text-gray-300 hover:text-purple-400 transition-colors">
                     Contact
                   </a>
                 </li>

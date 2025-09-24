@@ -355,7 +355,7 @@ defmodule SkimsafeBloggWeb.AboutLive do
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:blog@skimsafe.com"
+                href="mailto:info@skimsafe.se"
                 class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
               >
                 <.icon name="hero-envelope" class="w-4 h-4 mr-2" /> Contact the Blog Team
