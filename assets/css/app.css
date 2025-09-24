@@ -428,7 +428,9 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 3s ease-in-out infinite;
+  animation: shimmer 6s ease-in-out infinite;
+  line-height: 1.1;
+  padding-bottom: 0.125rem;
 }
 
 /* Dark mode version with slightly lighter purple */
@@ -443,4 +445,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shimmer 6s ease-in-out infinite;
+  line-height: 1.1;
+  padding-bottom: 0.125rem;
 }
