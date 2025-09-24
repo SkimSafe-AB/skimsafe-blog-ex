@@ -31,7 +31,6 @@ RUN mix assets.setup
 RUN mix assets.deploy
 
 # Compile application and create release
-RUN mix compile
 RUN mix release
 
 # Stage 2: Production runtime
