@@ -1,4 +1,4 @@
-name: Staging
+name: Dev
 
 on:
   workflow_dispatch:
@@ -86,7 +86,7 @@ jobs:
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ARM64-${{ github.sha }}
+          IMAGE_TAG: ARM64-DEV-${{ github.sha }}
         run: |
           # Build a docker container and
           # push it to ECR so that it can
@@ -96,60 +96,6 @@ jobs:
           DOCKER_BUILDKIT=1 docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f emailCheck.Dockerfile .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
-  # amd64-build:
-  #   name: AMD64 Build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - run: printenv
-  #     - run: mkdir elixir_cache
-  #     - name: Elixir Packages Hex Cache
-  #       id: cache-elixir-deps
-  #       uses: actions/cache@v3
-  #       with:
-  #         path: elixir_cache
-  #         key: ${{ github.workflow }}-elixir-cache-${{ runner.os }}-${{ runner.arch }}-${{ env.cache-name }}-${{ hashFiles('mix.lock') }}
-  #     - name: Set up Docker Buildx
-  #       uses: docker/setup-buildx-action@v1
-  #     -
-  #       name: Expose GitHub Runtime
-  #       uses: crazy-max/ghaction-github-runtime@v2
-  #     - name: Configure AWS credentials
-  #       uses: aws-actions/configure-aws-credentials@13d241b293754004c80624b5567555c4a39ffbe3
-  #       with:
-  #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #         aws-region: ${{ env.AWS_REGION }}
-  #     - name: Login to Amazon ECR
-  #       id: login-ecr
-  #       uses: aws-actions/amazon-ecr-login@aaf69d68aa3fb14c1d5a6be9ac61fe15b48453a2
-  #     - name: Create Secrets File
-  #       id: create_secrets_file
-  #       uses: timheuer/base64-to-file@v1.1
-  #       with:
-  #         fileName: 'bundle_portal.key'
-  #         fileDir: './'
-  #         encodedString: ${{ secrets.bundle_portal_key }}
-  #     - name: check if cache, otherwise get deps
-  #       if: steps.cache-elixir-deps.outputs.cache-hit != 'true'
-  #       run: |
-  #         DOCKER_BUILDKIT=1 docker build -f mixDeps.Dockerfile --output elixir_cache/ .
-  #     - run: ls -l elixir_cache
-  #     - run: ls -l elixir_cache/deps_cache
-  #     - run: ls -l elixir_cache/_build
-  #     - name: Build, tag, and push image to Amazon ECR
-  #       id: build-image
-  #       env:
-  #         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-  #         IMAGE_TAG: AMD64-${{ github.sha }}
-  #       run: |
-  #         # Build a docker container and
-  #         # push it to ECR so that it can
-  #         # be deployed to ECS.
-
-  #         DOCKER_BUILDKIT=1 docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f emailCheck.Dockerfile .
-  #         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-  #         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
   stop-runner:
     name: Stop self-hosted EC2 runner
     needs:
