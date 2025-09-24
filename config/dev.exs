@@ -4,7 +4,9 @@ config :ash, policies: [show_policy_breakdowns?: true]
 # Configure your database
 config :skimsafe_blogg, SkimsafeBlogg.Repo,
   database: "skimsafe_blogg_dev.sqlite3",
-  pool_size: 5
+  pool_size: 5,
+  timeout: 60_000,
+  ownership_timeout: 60_000
 
 # For development, we disable any cache and enable
 # debugging and code reloading.

@@ -7,8 +7,11 @@ config :ash, policies: [show_policy_breakdowns?: true]
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :skimsafe_blogg, SkimsafeBlogg.Repo,
-  database: "skimsafe_blogg_dev.sqlite3",
-  pool_size: 5
+  database: "skimsafe_blogg_test.sqlite3",
+  pool: Ecto.Adapters.SQL.Sandbox,
+  pool_size: 5,
+  timeout: 60_000,
+  ownership_timeout: 60_000
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.

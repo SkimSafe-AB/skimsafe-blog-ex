@@ -30,7 +30,9 @@ if config_env() == :prod do
 
   config :skimsafe_blogg, SkimsafeBlogg.Repo,
     database: database_name,
-    pool_size: 5
+    pool_size: 5,
+    timeout: 60_000,
+    ownership_timeout: 60_000
 
   maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
 
