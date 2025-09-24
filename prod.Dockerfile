@@ -44,6 +44,9 @@ RUN apt-get update && apt-get install -y \
     libncurses6 \
     wget \
     locales \
+    sqlite3 \
+    libsqlite3-dev \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # Generate locale for UTF-8
