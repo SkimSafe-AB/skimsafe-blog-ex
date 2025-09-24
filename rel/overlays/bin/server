@@ -3,8 +3,31 @@ set -eu
 
 cd -P -- "$(dirname -- "$0")"
 
-echo "Running database migrations..."
-./skimsafe_blogg eval SkimsafeBlogg.Release.migrate
+# Check if we should skip migrations
+if [ "${SKIP_MIGRATIONS:-false}" = "true" ]; then
+    echo "Skipping migrations (SKIP_MIGRATIONS=true)"
+    echo "Starting Phoenix server..."
+    exec ./skimsafe_blogg start
+else
+    echo "Checking for pending migrations..."
 
-echo "Starting Phoenix server..."
-exec ./skimsafe_blogg start
+    # Check if migrations are pending
+    PENDING=$(./skimsafe_blogg eval "SkimsafeBlogg.Release.pending_migrations?()" 2>/dev/null || echo "true")
+
+    if [ "$PENDING" = "false" ]; then
+        echo "No pending migrations found."
+        echo "Starting Phoenix server..."
+        exec ./skimsafe_blogg start
+    else
+        echo "Pending migrations found. Running migrations with timeout protection..."
+
+        # Run migrations with a timeout to prevent hanging
+        timeout 120 ./skimsafe_blogg eval "SkimsafeBlogg.Release.migrate([timeout: 90_000])" || {
+            echo "Migration timed out or failed. Starting server anyway..."
+            echo "You may need to run migrations manually with: ./migrate"
+        }
+
+        echo "Starting Phoenix server..."
+        exec ./skimsafe_blogg start
+    fi
+fi

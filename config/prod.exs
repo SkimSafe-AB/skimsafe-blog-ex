@@ -19,3 +19,8 @@ config :logger, level: :info
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
+config :skimsafe_blogg, SkimsafeBlogg.Repo,
+  pool_size: 5,
+  timeout: 60_000,
+  ownership_timeout: 60_000,
+  journal_mode: :wal

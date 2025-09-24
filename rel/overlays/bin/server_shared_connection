@@ -1,0 +1,32 @@
+#!/bin/sh
+set -eu
+
+cd -P -- "$(dirname -- "$0")"
+
+echo "Starting Phoenix server with shared database connection for migrations..."
+
+# Start the application in the background and get its PID
+./skimsafe_blogg start &
+SERVER_PID=$!
+
+# Give the server a moment to start and establish database connections
+sleep 3
+
+# Check if server is still running
+if kill -0 $SERVER_PID 2>/dev/null; then
+    echo "Server started successfully (PID: $SERVER_PID)"
+    echo "Running migrations using shared connection..."
+
+    # Run migrations using the running application's database connection
+    ./skimsafe_blogg eval "SkimsafeBlogg.Release.migrate_async() |> Task.await(60_000)" &
+    MIGRATE_PID=$!
+
+    echo "Migration task started (PID: $MIGRATE_PID)"
+    echo "Both server and migrations are running..."
+
+    # Wait for the server (migrations will complete in background)
+    wait $SERVER_PID
+else
+    echo "Server failed to start"
+    exit 1
+fi
