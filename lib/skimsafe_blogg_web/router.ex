@@ -20,6 +20,8 @@ defmodule SkimsafeBloggWeb.Router do
     live "/", HomeLive, :index
     live "/posts/:slug", PostLive, :show
     live "/about", AboutLive, :index
+    live "/privacy", PrivacyLive, :index
+    live "/terms", TermsLive, :index
     # get "/tags/:tag", TagController, :show
   end
 
