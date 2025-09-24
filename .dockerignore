@@ -46,7 +46,7 @@ docker-compose*.yml
 /tmp/
 
 # Runtime files
-/priv/static/
+# /priv/static/
 /priv/repo/seeds.exs
 *.pid
 
