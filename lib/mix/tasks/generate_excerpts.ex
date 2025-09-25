@@ -168,6 +168,74 @@ defmodule Mix.Tasks.GenerateExcerpts do
   end
 
   defp call_openai_for_excerpt(content) do
+    # Try Claude first, then OpenAI as fallback
+    case call_claude_for_excerpt(content) do
+      {:ok, excerpt} -> {:ok, excerpt}
+      {:error, _} -> call_openai_api(content)
+    end
+  end
+
+  defp call_claude_for_excerpt(content) do
+    api_key = System.get_env("ANTHROPIC_API_KEY")
+
+    if is_nil(api_key) or String.trim(api_key) == "" do
+      {:error, "Claude API key not found"}
+    else
+      prompt = """
+      Please create a concise, engaging excerpt for this blog post that would work well on a blog card.
+
+      Requirements:
+      - Maximum 150-180 characters
+      - Should be compelling and make readers want to click
+      - Focus on the main value/benefit to the reader
+      - No quotes around the response
+      - Professional but approachable tone
+
+      Blog Post Content:
+      #{String.slice(content, 0, 2000)}
+      """
+
+      body = %{
+        model: "claude-3-haiku-20240307",
+        max_tokens: 100,
+        messages: [
+          %{
+            role: "user",
+            content: prompt
+          }
+        ]
+      }
+
+      headers = [
+        {"x-api-key", api_key},
+        {"anthropic-version", "2023-06-01"},
+        {"Content-Type", "application/json"}
+      ]
+
+      case Req.post("https://api.anthropic.com/v1/messages",
+                    json: body,
+                    headers: headers,
+                    receive_timeout: 30_000) do
+        {:ok, %{status: 200, body: response}} ->
+          case get_in(response, ["content", Access.at(0), "text"]) do
+            excerpt when is_binary(excerpt) ->
+              {:ok, String.trim(excerpt)}
+            _ ->
+              {:error, "Invalid response format"}
+          end
+
+        {:ok, %{status: status, body: body}} ->
+          Logger.error("Claude API error: #{status} - #{inspect(body)}")
+          {:error, "API request failed with status #{status}"}
+
+        {:error, error} ->
+          Logger.error("Claude API request failed: #{inspect(error)}")
+          {:error, "Network request failed"}
+      end
+    end
+  end
+
+  defp call_openai_api(content) do
     api_key = System.get_env("OPENAI_API_KEY")
 
     if is_nil(api_key) or String.trim(api_key) == "" do
@@ -237,39 +305,34 @@ defmodule Mix.Tasks.GenerateExcerpts do
     |> String.slice(0, 150)
     |> then(fn text ->
       # Try to end at a sentence boundary
-      case String.split(text, ". ") do
+      sentences = String.split(text, ". ")
+
+      case sentences do
         [first_sentence | _rest] ->
           if String.length(first_sentence) > 50 do
             first_sentence <> "."
           else
-            # Find last complete word within limit
-            text
-            |> String.split(" ")
-            |> Enum.reduce_while("", fn word, acc ->
-              new_acc = if acc == "", do: word, else: acc <> " " <> word
-              if String.length(new_acc) <= 140 do
-                {:cont, new_acc}
-              else
-                {:halt, acc}
-              end
-            end)
-            |> Kernel.<>("...")
+            create_word_limited_excerpt(text)
           end
         _ ->
-          # Find last complete word within limit
-          text
-          |> String.split(" ")
-          |> Enum.reduce_while("", fn word, acc ->
-            new_acc = if acc == "", do: word, else: acc <> " " <> word
-            if String.length(new_acc) <= 140 do
-              {:cont, new_acc}
-            else
-              {:halt, acc}
-            end
-          end)
-          |> Kernel.<>("...")
+          create_word_limited_excerpt(text)
       end
     end)
+  end
+
+  defp create_word_limited_excerpt(text) do
+    # Find last complete word within limit
+    text
+    |> String.split(" ")
+    |> Enum.reduce_while("", fn word, acc ->
+      new_acc = if acc == "", do: word, else: acc <> " " <> word
+      if String.length(new_acc) <= 140 do
+        {:cont, new_acc}
+      else
+        {:halt, acc}
+      end
+    end)
+    |> Kernel.<>("...")
   end
 
   defp extract_simple_excerpt(_), do: "Learn more about this topic."

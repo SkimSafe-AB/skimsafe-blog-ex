@@ -12,15 +12,13 @@ defmodule SkimsafeBlogg.Application do
       SkimsafeBlogg.Repo,
       {DNSCluster, query: Application.get_env(:skimsafe_blogg, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: SkimsafeBlogg.PubSub},
+      # ContentLoader - loads blog posts from markdown files on startup
+      SkimsafeBlogg.ContentLoader,
       # Start a worker by calling: SkimsafeBlogg.Worker.start_link(arg)
       # {SkimsafeBlogg.Worker, arg},
       # Start to serve requests, typically the last entry
       SkimsafeBloggWeb.Endpoint
     ]
-
-    #
-    # Add some task for inserting blog posts here
-    #
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options

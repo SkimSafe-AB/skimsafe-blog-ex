@@ -7,6 +7,13 @@
 # General application configuration
 import Config
 
+# ContentLoader configuration
+config :skimsafe_blogg,
+  # Load content on startup if no posts exist in database
+  load_content_on_startup: false,
+  # Clear existing posts before loading (use with caution)
+  clear_posts_on_load: false
+
 config :ash,
   allow_forbidden_field_for_relationships_by_default?: true,
   include_embedded_source_by_default?: false,
