@@ -23,6 +23,7 @@ defmodule SkimsafeBlogg.Resources.Post do
     define :get_by_slug, action: :by_slug, args: [:slug]
     define :list_by_tag, action: :by_tag, args: [:tag]
     define :update_tags, action: :update_tags, args: [:tags]
+    define :update_excerpt, action: :update_excerpt, args: [:excerpt]
   end
 
   # Actions - read and update actions
@@ -34,6 +35,12 @@ defmodule SkimsafeBlogg.Resources.Post do
     update :update_tags do
       description "Update tags for a post"
       accept [:tags]
+    end
+
+    # Update action for excerpts
+    update :update_excerpt do
+      description "Update excerpt for a post"
+      accept [:excerpt]
     end
 
     # Custom read actions for specific use cases
