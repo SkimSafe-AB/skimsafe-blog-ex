@@ -190,8 +190,8 @@ defmodule SkimsafeBloggWeb.HomeLive do
                 title="Elixir Basics for Beginners"
                 author="Tech Team"
                 published_at="Sep 18, 2025"
-                read_time="7 min read"
-                href="/posts/elixir-basics"
+                read_time="4 min read"
+                href="/posts/elixir-basics-for-beginners"
               />
               <.blog_list_item
                 title="Your First Phoenix App"

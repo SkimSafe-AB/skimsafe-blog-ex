@@ -134,7 +134,7 @@ defmodule Math do
     n * factorial(n - 1)
   end
 
-  # Guard clauses help you handle edge cases elegantly  
+  # Guard clauses help you handle edge cases elegantly
   def divide(a, b) when b != 0 do
     a / b
   end
@@ -146,7 +146,7 @@ end
 
 # Using the module
 Math.add(1, 2)        # 3
-Math.factorial(5)     # 120 
+Math.factorial(5)     # 120
 Math.divide(10, 2)    # 5.0
 Math.divide(10, 0)    # {:error, "Cannot divide by zero"}
 ```
@@ -236,7 +236,7 @@ age = 25
 
 result = cond do
   age < 13 -> "child"
-  age < 20 -> "teenager"  
+  age < 20 -> "teenager"
   age < 60 -> "adult"
   true -> "senior"  # this is your default case
 end
@@ -253,7 +253,7 @@ end
 
 # Unless is just syntactic sugar for if not
 unless age < 18 do
-  "Can vote"  
+  "Can vote"
 end
 ```
 
@@ -410,12 +410,12 @@ defmodule UserLoader do
   end
 
   defp fetch_user(id), do: {:ok, %{id: id, name: "Alice"}}
-  defp fetch_preferences(_id), do: {:ok, %{theme: "dark"}}  
+  defp fetch_preferences(_id), do: {:ok, %{theme: "dark"}}
   defp build_profile(user, prefs), do: {:ok, Map.merge(user, prefs)}
 end
 ```
 
-The `with` statement is smart for chaining operations that might fail. If any step returns something that doesn't match the pattern, it goes to the `else` clause. 
+The `with` statement is smart for chaining operations that might fail. If any step returns something that doesn't match the pattern, it goes to the `else` clause.
 
 ## Common Patterns You'll See Everywhere
 
@@ -495,45 +495,33 @@ def process_user_data(data) do
 end
 
 defp validate_data(data), do: # validation logic here
-defp transform_data(data), do: # transformation logic here  
-defp save_data(data), do
-````
-
-3. Keep Functions Small
-```
-elixirdef process_user_data(data) do
-  data
-  |> validate_data()
-  |> transform_data()
-  |> save_data()
-end
-
-defp validate_data(data), do: # validation logic here
-defp transform_data(data), do: # transformation logic here  
+defp transform_data(data), do: # transformation logic here
 defp save_data(data), do: # saving logic here
-````
+```
 
 Each function does one thing and does it well. Easy to test, easy to understand, easy to debug.
 
-#### What's Next?
+## What's Next?
+
 So you've got the basics down. Here's what I'd recommend doing next:
 
-- Play around in IEx, fire up the interactive shell and experiment. It's the best way to learn!
-- Build something small, maybe a CLI tool or a simple library. Nothing fancy, just get your hands dirty.
-- Dive into OTP and learn more about GenServer, Supervisor, and Application. This is where the real power is.
-- Try Phoenix and build a web app! Phoenix is fantastic and will teach you a lot about Elixir patterns.
-- Read other people's code and check out some open-source Elixir projects on GitHub
+- **Play around in IEx** - fire up the interactive shell and experiment. It's the best way to learn!
+- **Build something small** - maybe a CLI tool or a simple library. Nothing fancy, just get your hands dirty.
+- **Dive into OTP** - learn more about GenServer, Supervisor, and Application. This is where the real power is.
+- **Try Phoenix** - build a web app! Phoenix is fantastic and will teach you a lot about Elixir patterns.
+- **Read other people's code** - check out some open-source Elixir projects on GitHub
 
-#### Resources Worth Checking Out
+## Resources Worth Checking Out
 
-- Official Elixir Documentation - Actually really well written
-- Elixir School - Great tutorials
-- Programming Elixir by Dave Thomas - Solid book
-- Elixir in Action by Saša Jurić - Goes deeper into OTP
-- Elixir Forum - Super helpful community
+- **Official Elixir Documentation** - Actually really well written
+- **Elixir School** - Great tutorials
+- **Programming Elixir by Dave Thomas** - Solid book
+- **Elixir in Action by Saša Jurić** - Goes deeper into OTP
+- **Elixir Forum** - Super helpful community
 
 Welcome to Elixir! It's a bit of a mind shift if you're coming from imperative languages, but once it clicks, you'll love it I hope. The combination of functional programming with the actor model for concurrency is perfect for building robust, scalable systems.
-Now go build something cool! 
+
+Now go build something cool!
 
 Stay weird!🧪
 

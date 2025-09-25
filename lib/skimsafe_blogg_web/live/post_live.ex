@@ -41,7 +41,7 @@ defmodule SkimsafeBloggWeb.PostLive do
     <!-- Tags -->
             <div :if={@post.tags != []} class="flex flex-wrap gap-2">
               <span
-                :for={tag <- @post.tags}
+                :for={tag <- Enum.take(@post.tags, 5)}
                 class="px-3 py-1 bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 rounded-full text-sm font-medium hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors"
               >
                 {tag}

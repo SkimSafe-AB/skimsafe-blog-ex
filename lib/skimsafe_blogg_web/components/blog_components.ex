@@ -53,7 +53,7 @@ defmodule SkimsafeBloggWeb.BlogComponents do
     <!-- Tags -->
         <div :if={@tags != []} class="flex flex-wrap gap-2">
           <span
-            :for={tag <- @tags}
+            :for={tag <- Enum.take(@tags, 5)}
             class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
           >
             {tag}
@@ -155,7 +155,7 @@ defmodule SkimsafeBloggWeb.BlogComponents do
     <!-- Tags -->
         <div :if={@tags != []} class="flex flex-wrap gap-2">
           <span
-            :for={tag <- @tags}
+            :for={tag <- Enum.take(@tags, 5)}
             class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
           >
             {tag}
