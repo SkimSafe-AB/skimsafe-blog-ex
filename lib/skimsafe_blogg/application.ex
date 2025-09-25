@@ -18,6 +18,10 @@ defmodule SkimsafeBlogg.Application do
       SkimsafeBloggWeb.Endpoint
     ]
 
+    #
+    # Add some task for inserting blog posts here
+    #
+
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: SkimsafeBlogg.Supervisor]
