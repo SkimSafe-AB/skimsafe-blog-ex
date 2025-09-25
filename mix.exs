@@ -75,7 +75,9 @@ defmodule SkimsafeBlogg.MixProject do
       # NimblePublisher for markdown parsing and syntax highlighting
       {:nimble_publisher, "~> 1.0", runtime: false},
       {:makeup_elixir, ">= 0.0.0", runtime: false},
-      {:makeup_erlang, ">= 0.0.0", runtime: false}
+      {:makeup_erlang, ">= 0.0.0", runtime: false},
+      # Earmark for markdown to HTML conversion
+      {:earmark, "~> 1.4"}
     ]
   end
 
