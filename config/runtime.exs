@@ -63,5 +63,11 @@ if config_env() == :prod do
       ip: {0, 0, 0, 0, 0, 0, 0, 0},
       port: port
     ],
+    check_origin: [
+      "https://#{host}",
+      "http://127.0.0.1:4000",
+      "http://localhost:4000",
+      "http://0.0.0.0:4000"
+    ],
     secret_key_base: secret_key_base
 end
