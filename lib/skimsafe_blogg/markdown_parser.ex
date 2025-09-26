@@ -166,6 +166,10 @@ defmodule SkimsafeBlogg.MarkdownParser do
     |> String.replace(~r/\n+/, " ")  # Replace newlines with spaces
     |> String.replace(~r/\s+/, " ")  # Normalize whitespace
     |> String.replace(~r/^#+\s*/, "") # Remove markdown headers
+    |> String.replace(~r/\*\*([^*]+)\*\*/, "\\1") # Remove bold formatting
+    |> String.replace(~r/\*([^*]+)\*/, "\\1") # Remove italic formatting
+    |> String.replace(~r/`([^`]+)`/, "\\1") # Remove inline code formatting
+    |> String.replace(~r/\[([^\]]+)\]\([^)]+\)/, "\\1") # Remove links, keep text
     |> String.trim()
     |> String.slice(0, 150)
     |> then(fn text ->

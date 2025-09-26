@@ -238,34 +238,38 @@
             </div>
           </div>
 
-          <!-- Quick Links -->
+          <!-- Elixir Community -->
           <div>
-            <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
-            <ul class="space-y-3">
-              <li>
-                <.link
-                  navigate="/about"
-                  class="text-gray-300 hover:text-purple-400 transition-colors"
-                  phx-click={JS.dispatch("scroll-to-top")}
-                >
-                  About Us
-                </.link>
-              </li>
-              <li>
-                <.link
-                  navigate="/"
-                  class="text-gray-300 hover:text-purple-400 transition-colors"
-                  phx-click={JS.dispatch("scroll-to-top")}
-                >
-                  Blog
-                </.link>
-              </li>
-              <li>
-                <a href="mailto:info@skimsafe.se" class="text-gray-300 hover:text-purple-400 transition-colors">
-                  Contact
-                </a>
-              </li>
-            </ul>
+            <h4 class="text-lg font-semibold text-white mb-4">Elixir Community</h4>
+            <div class="space-y-3">
+              <a
+                href="https://elixirforum.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors"
+              >
+                <.icon name="hero-chat-bubble-left-right" class="w-5 h-5" />
+                <span>Join the Discussion on Elixir Forum</span>
+              </a>
+              <a
+                href="https://github.com/phoenixframework/phoenix"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors"
+              >
+                <.icon name="hero-code-bracket" class="w-5 h-5" />
+                <span>Contribute to Phoenix on GitHub</span>
+              </a>
+              <a
+                href="https://hexdocs.pm/phoenix/overview.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors"
+              >
+                <.icon name="hero-document-text" class="w-5 h-5" />
+                <span>Read the Phoenix Documentation</span>
+              </a>
+            </div>
           </div>
         </div>
 

@@ -39,63 +39,6 @@
       <h2 class="text-2xl font-bold text-gray-900 mb-6 dark:text-white">Recent Posts</h2>
       <.blog_grid posts={@recent_posts} />
     </div>
-    
-<!-- Quick Links Section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white border border-gray-200 rounded-lg p-6 dark:bg-gray-900 dark:border-gray-700">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4 dark:text-white">Getting Started</h3>
-        <div class="space-y-3">
-          <.blog_list_item
-            title="Phoenix Installation Guide"
-            author="Tech Team"
-            published_at="Sep 20, 2025"
-            read_time="5 min read"
-            href="/posts/phoenix-installation"
-          />
-          <.blog_list_item
-            title="Elixir Basics for Beginners"
-            author="Tech Team"
-            published_at="Sep 18, 2025"
-            read_time="7 min read"
-            href="/posts/elixir-basics"
-          />
-          <.blog_list_item
-            title="Your First Phoenix App"
-            author="Tech Team"
-            published_at="Sep 15, 2025"
-            read_time="10 min read"
-            href="/posts/first-phoenix-app"
-          />
-        </div>
-      </div>
-
-      <div class="bg-white border border-gray-200 rounded-lg p-6 dark:bg-gray-900 dark:border-gray-700">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4 dark:text-white">Community</h3>
-        <div class="space-y-4">
-          <a
-            href="https://elixirforum.com"
-            class="flex items-center space-x-3 text-gray-600 hover:text-purple-600 transition-colors dark:text-gray-400 dark:hover:text-purple-400"
-          >
-            <.icon name="hero-chat-bubble-left-right" class="w-5 h-5" />
-            <span>Join the Discussion</span>
-          </a>
-          <a
-            href="https://github.com/phoenixframework/phoenix"
-            class="flex items-center space-x-3 text-gray-600 hover:text-purple-600 transition-colors dark:text-gray-400 dark:hover:text-purple-400"
-          >
-            <.icon name="hero-code-bracket" class="w-5 h-5" />
-            <span>Contribute to Phoenix</span>
-          </a>
-          <a
-            href="https://hexdocs.pm/phoenix"
-            class="flex items-center space-x-3 text-gray-600 hover:text-purple-600 transition-colors dark:text-gray-400 dark:hover:text-purple-400"
-          >
-            <.icon name="hero-book-open" class="w-5 h-5" />
-            <span>Read the Docs</span>
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
   
 <!-- Footer Section -->
@@ -136,26 +79,39 @@
           </div>
         </div>
         
-<!-- Quick Links -->
+<!-- Elixir Community -->
         <div>
-          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
-          <ul class="space-y-3">
-            <li>
-              <a href="/about" class="text-gray-300 hover:text-purple-400 transition-colors">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-300 hover:text-purple-400 transition-colors">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="/" class="text-gray-300 hover:text-purple-400 transition-colors">
-                Home
-              </a>
-            </li>
-          </ul>
+          <h4 class="text-lg font-semibold text-white mb-4">Elixir Community</h4>
+          <div class="space-y-3">
+            <a
+              href="https://elixirforum.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors"
+            >
+              <.icon name="hero-chat-bubble-left-right" class="w-5 h-5" />
+              <span>Join the Discussion on Elixir Forum</span>
+            </a>
+            <a
+              href="https://github.com/phoenixframework/phoenix"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors"
+            >
+              <.icon name="hero-code-bracket" class="w-5 h-5" />
+              <span>Contribute to Phoenix on GitHub</span>
+            </a>
+            <a
+              href="https://hexdocs.pm/phoenix/overview.html"
+   
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors"
+            >
+              <.icon name="hero-document-text" class="w-5 h-5" />
+              <span>Read the Phoenix Documentation</span>
+            </a>
+          </div>
         </div>
       </div>
       

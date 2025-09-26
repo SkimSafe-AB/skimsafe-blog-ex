@@ -314,10 +314,10 @@ defmodule SkimsafeBloggWeb.AboutLive do
 
                 <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
                   <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    Join Our Community
+                    Join the Elixir Community
                   </h3>
                   <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                    Connect with us and stay updated on our latest posts and insights.
+                    Connect and stay updated on the latest posts and insights.
                   </p>
                   <div class="flex justify-center space-x-4">
                     <a

@@ -156,6 +156,10 @@ defmodule Mix.Tasks.GenerateExcerpts do
           excerpt
           |> String.trim()
           |> String.replace(~r/^"|"$/, "") # Remove surrounding quotes
+          |> String.replace(~r/\*\*([^*]+)\*\*/, "\\1") # Remove bold formatting
+          |> String.replace(~r/\*([^*]+)\*/, "\\1") # Remove italic formatting
+          |> String.replace(~r/`([^`]+)`/, "\\1") # Remove inline code formatting
+          |> String.replace(~r/\[([^\]]+)\]\([^)]+\)/, "\\1") # Remove links, keep text
           |> String.slice(0, 200) # Hard limit to 200 characters
 
         {:ok, cleaned_excerpt}
