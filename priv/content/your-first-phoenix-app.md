@@ -6,8 +6,8 @@ Ready to build your first Phoenix application? This hands-on tutorial will guide
 
 Before we start, make sure you have:
 
-1. **Elixir and Phoenix installed** - Follow our [Phoenix Installation Guide](/posts/phoenix-installation)
-2. **Basic Elixir knowledge** - Check out [Elixir Basics for Beginners](/posts/elixir-basics)
+1. **Elixir and Phoenix installed** - Follow our [Phoenix Installation Guide](/posts/phoenix-installation-guide-2025)
+2. **Basic Elixir knowledge** - Check out [Elixir Basics for Beginners](/posts/elixir-basics-for-beginners)
 3. **PostgreSQL running** (or SQLite for simpler setup)
 4. **A text editor** with Elixir support
 
@@ -511,7 +511,7 @@ mix test
 
 Congratulations! You've built your first Phoenix application. Here are some ideas to extend it:
 
-### 🚀 **Enhancement Ideas**
+### Enhancement Ideas
 
 1. **User Authentication** - Add user accounts with `phx.gen.auth`
 2. **Categories/Tags** - Organize tasks by categories
@@ -569,4 +569,6 @@ You've successfully built a complete Phoenix LiveView application! This tutorial
 
 Phoenix makes building interactive web applications incredibly productive. With LiveView, you get the benefits of a single-page application without the complexity of managing client-side state and JavaScript frameworks.
 
-Keep building and exploring Phoenix - there's so much more to discover! 🚀
+Keep building and exploring Phoenix, there's so much more to discover!
+
+/Louise Blanc

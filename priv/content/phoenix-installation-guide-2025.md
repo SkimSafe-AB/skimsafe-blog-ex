@@ -28,7 +28,7 @@ sudo apt-get update
 sudo apt-get install elixir erlang-dev erlang-parsetools
 ```
 
-The erlang-dev and erlang-parsetools packages are important, or you risk to run into weird compilation errors later. Don't be that person!
+The erlang-dev and erlang-parsetools packages are important, or you risk to run into weird compilation errors later.
 
 **erlang-dev:**
 - Contains header files and development tools needed to compile Erlang/Elixir applications
@@ -119,7 +119,7 @@ If you're coming from other ecosystems, think of Hex like npm for Node.js or pip
 mix archive.install hex phx_new
 ```
 
-This command installs the Phoenix application generator - basically a tool that creates new Phoenix projects with all the boilerplate set up for you. It's a huge time saver and ensures you start with all the right conventions.
+This command installs the Phoenix application generator, basically a tool that creates new Phoenix projects with all the boilerplate set up for you. It's a huge time saver and ensures you start with all the right conventions.
 
 You might see a prompt asking if you want to install the archive. Say yes! That's what we want.
 
@@ -221,7 +221,7 @@ Before diving into building your own stuff, explore what Phoenix generated for y
 
 ### 2. Learn Elixir If You Haven't Already
 
-If you're new to Elixir, definitely check out our Elixir Basics for Beginners guide. Phoenix is built on Elixir, so understanding the language will make everything else click into place.
+If you're new to Elixir, definitely check out our [Elixir Basics for Beginners guide](/posts/elixir-basics-for-beginners). Phoenix is built on Elixir, so understanding the language will make everything else click into place easier.
 
 ### 3. Dive into LiveView
 
@@ -245,12 +245,14 @@ You can always add Node.js later when you actually need it!
 
 ## Resources Worth Bookmarking
 
-- [Phoenix Framework Documentation](https://hexdocs.pm/phoenix/) - Really well written and comprehensive
-- [Elixir Documentation](https://elixir-lang.org/docs.html) - Essential if you're learning Elixir
-- [Elixir Forum](https://elixirforum.com/) - Super helpful community, great for asking questions
-- [Phoenix GitHub Repository](https://github.com/phoenixframework/phoenix) - Source code and issues
-- [LiveView Documentation](https://hexdocs.pm/phoenix_live_view/) - Essential for understanding the new LiveView-centric approach
+- [Phoenix Framework Documentation](https://hexdocs.pm/phoenix/){:target="_blank"} - Really well written and comprehensive
+- [Elixir Documentation](https://elixir-lang.org/docs.html){:target="_blank"} - Essential if you're learning Elixir
+- [Elixir Forum](https://elixirforum.com/){:target="_blank"} - Super helpful community, great for asking questions
+- [Phoenix GitHub Repository](https://github.com/phoenixframework/phoenix){:target="_blank"} - Source code and issues
+- [LiveView Documentation](https://hexdocs.pm/phoenix_live_view/){:target="_blank"} - Essential for understanding the new LiveView-centric approach
 
 Once you have it running, you'll be amazed at how productive you can be.
 
-Now go build something awesome! 🔥
+Now go build something awesome!
+
+/Louise Blanc

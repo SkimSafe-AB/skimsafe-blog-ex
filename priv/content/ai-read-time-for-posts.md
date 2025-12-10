@@ -39,7 +39,7 @@ config :skimsafe_blogg, :ai_services,
   ]
 ```
 
-This config block is pretty straightforward but super important! We're telling our app where to find the API credentials (from environment variables - never hardcode your secrets, folks!) and setting up the base URLs for both services. The OpenAI model is set to GPT-3.5-turbo because it's fast and cheap for this kind of simple task.
+This config block is pretty straightforward but super important! We're telling our app where to find the API credentials (from environment variables, never hardcode your secrets folks!) and setting up the base URLs for both services. The OpenAI model is set to GPT-3.5-turbo because it's fast and cheap for this kind of simple task.
 
 I copied the API keys from Claude and OpenAI and put them in the `.env` file.
 
@@ -339,6 +339,6 @@ To see what would happen if you processed specific posts with Claude.
 And that's it! You've successfully built a complete AI-powered read time estimation system for your blog. Pretty nice how Mix tasks can automate these kinds of repetitive workflows! The best part is how modular everything is - you can easily swap AI services, modify the fallback calculation, or even add completely new features like content summarization using the same patterns.
 
 In the future I wanna build our own ML model and train it on the posts. 
-Elixir has Axon that would be a great way to start!
+Elixir has Axon that would be a great way to start.
 
-Louise Blanc
+/Louise Blanc
