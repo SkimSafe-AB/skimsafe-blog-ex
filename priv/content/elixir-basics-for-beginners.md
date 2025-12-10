@@ -17,7 +17,7 @@ I've been playing around with Elixir for a while now, and honestly, once you get
 
 ## Getting Your Environment Ready
 
-Before we dive in, make sure you've got Elixir installed. If you haven't done this yet, check out our [Phoenix Installation Guide](/posts/phoenix-installation) - it covers Elixir installation too.
+Before we dive in, make sure you've got Elixir installed. If you haven't done this yet, check out our [Phoenix Installation Guide](/posts/phoenix-installation-guide-2025) It covers Elixir installation too.
 
 ### Double-Check Everything Works
 
@@ -72,7 +72,7 @@ false
 
 ### Pattern Matching - The Game Changer
 
-This is where Elixir starts getting really interesting. Pattern matching isn't just assignment - it's like destructuring on steroids:
+This is where Elixir starts getting really interesting. Pattern matching isn't just assignment, it's like destructuring on steroids:
 
 ```elixir
 # Basic pattern matching
@@ -227,7 +227,7 @@ case File.read("config.txt") do
 end
 ```
 
-Case statements with pattern matching are cleaner than traditional switch statements. You're not just comparing values - you're destructuring and extracting data at the same time.
+Case statements with pattern matching are cleaner than traditional switch statements. You're not just comparing values, you're destructuring and extracting data at the same time.
 
 ### Cond Statements
 
@@ -261,7 +261,7 @@ I don't use if statement that much in Elixir. Pattern matching and case statemen
 
 ## Processes and Concurrency - The Real Magic
 
-This is where Elixir really shines. Processes are not OS threads - they're super lightweight and isolated.
+This is where Elixir really shines. Processes are not OS threads, they're super lightweight and isolated processes.
 
 ### Spawning Processes
 
@@ -513,16 +513,16 @@ So you've got the basics down. Here's what I'd recommend doing next:
 
 ## Resources Worth Checking Out
 
-- **Official Elixir Documentation** - Actually really well written
-- **Elixir School** - Great tutorials
-- **Programming Elixir by Dave Thomas** - Solid book
-- **Elixir in Action by Saša Jurić** - Goes deeper into OTP
-- **Elixir Forum** - Super helpful community
+- [Official Elixir Documentation](https://elixir-lang.org/docs.html){:target="_blank"} - Actually really well written
+- [Elixir School](https://elixirschool.com/en){:target="_blank"} - Great tutorials
+- [Programming Elixir by Dave Thomas](https://pragprog.com/titles/elixir16/programming-elixir-1-6/){:target="_blank"} - Solid book
+- [Elixir in Action by Saša Jurić](https://www.manning.com/books/elixir-in-action-third-edition){:target="_blank"} - Goes deeper into OTP
+- [Elixir Forum](https://elixirforum.com/){:target="_blank"} - Super helpful community
 
 Welcome to Elixir! It's a bit of a mind shift if you're coming from imperative languages, but once it clicks, you'll love it I hope. The combination of functional programming with the actor model for concurrency is perfect for building robust, scalable systems.
 
 Now go build something cool!
 
-Stay weird!🧪
+Stay weird!
 
-Louise Blanc
+/Louise Blanc

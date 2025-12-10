@@ -13,7 +13,9 @@ defmodule SkimsafeBlogg.Blog.PostRenderer do
     html =
       Earmark.as_html!(markdown_content,
         code_class_prefix: "language-",
-        smartypants: false
+        smartypants: false,
+        escape: false,
+        pure_links: true
       )
 
     # Apply syntax highlighting to code blocks
@@ -41,11 +43,20 @@ defmodule SkimsafeBlogg.Blog.PostRenderer do
 
   defp highlight_code_blocks(html) do
     # Use regex to find and replace code blocks with highlighted versions
+    # Match Earmark's output: <code class="language-elixir">
     Regex.replace(
-      ~r/<code class="([^"]+) language-([^"]+)">(.*?)<\/code>/s,
+      ~r/<code class="language-([^"]+)">(.*?)<\/code>/s,
       html,
-      fn _, _class, language, code ->
-        highlighted_code = highlight_code(code, language)
+      fn _, language, code ->
+        # Decode HTML entities that Earmark may have encoded
+        decoded_code =
+          code
+          |> String.replace("&lt;", "<")
+          |> String.replace("&gt;", ">")
+          |> String.replace("&quot;", "\"")
+          |> String.replace("&amp;", "&")
+
+        highlighted_code = highlight_code(decoded_code, language)
 
         # Check if the highlighted code already has pre/code tags
         if String.contains?(highlighted_code, "<pre class=\"highlight\">") do

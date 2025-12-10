@@ -6,7 +6,7 @@ Phoenix LiveView is honestly one of those technologies that made me go "wait, th
 
 LiveView is a library that gives you rich, real-time user experiences with **server-rendered HTML**. Think of it like this: instead of having a separate frontend and backend that talk to each other through APIs, you have one **Elixir process** that holds your state and pushes HTML updates directly to the browser through **WebSockets**.
 
-I know, I know - "server-rendered HTML" doesn't sound exciting in 2025… But trust me on this one, it's good stuff\!
+I know, I know "server-rendered HTML" doesn't sound exciting in 2025… But trust me on this one, it's good stuff\!
 
 ### Why LiveView Rocks
 
@@ -375,14 +375,15 @@ In the template, tell LiveView to use the stream update strategy:
 
 -----
 
-## Wrapping Up
-
 Phoenix LiveView changed how many developers think about web development. The combination of real-time updates, server-side rendering, and using a single language is incredibly powerful. Focus on understanding the **socket lifecycle** and making **function components** your default UI building block.
-
-Now go build something cool\! 🚀
 
 ### Worth Checking Out
 
-  * [Phoenix LiveView Documentation](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html)
-  * [Phoenix Component Documentation](https://hexdocs.pm/phoenix_live_view/Phoenix.Component.html)
-  * [Phoenix PubSub Guide](https://www.google.com/search?q=https://hexdocs.pm/phoenix/Phoenix.PubSub.html)
+  * [Phoenix LiveView Documentation](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html){:target="_blank"}
+  * [Phoenix Component Documentation](https://hexdocs.pm/phoenix_live_view/Phoenix.Component.html){:target="_blank"}
+  * [Phoenix PubSub Guide](https://www.google.com/search?q=https://hexdocs.pm/phoenix/Phoenix.PubSub.html){:target="_blank"}
+
+Now go build something cool\!
+
+/Louise Blanc
+
